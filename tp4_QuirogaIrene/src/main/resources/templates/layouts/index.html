@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Inicio</title>
-	<link rel="icon" type="image/x-icon" href="../static/images/favicon.ico">
-	<link rel="stylesheet" data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="icon" type="image/x-icon" th:href="@{../static/images/favicon.ico}">
+	<link rel="stylesheet" data-th-href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
 </head>
-<header>
+<header th:fragment="header">
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#"><img src="../static/images/logounju.png" style="height: 100px;" alt="Logo"></a>
+			<a class="navbar-brand" href="#"><img th:src="@{../../static/images/logounju.png}" style="height: 100px;" alt="Logo"></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 				aria-label="Toggle navigation">
@@ -64,21 +62,21 @@
 					<div class="carousel-inner">
 						<h4 class="text-center" style="background-color: rgb(255, 255, 255);"> Seccion Noticias</h4>
 						<div class="carousel-item active">
-							<a href="https://www.lanacion.com.ar/tecnologia/asi-se-veria-woody-de-toy-story-en-la-vida-real-segun-la-inteligencia-artificial-nid29052024/"target="_blank"><img src="../static/images/woody.jpg" class="d-block w-100" alt="..."></a>
+							<a href="https://www.lanacion.com.ar/tecnologia/asi-se-veria-woody-de-toy-story-en-la-vida-real-segun-la-inteligencia-artificial-nid29052024/"target="_blank"><img th:src="@{../../static/images/woody.png}" class="d-block w-100" alt="..."></a>
 							<div class="carousel-caption d-none d-md-block"	style="background-color: rgba(0, 0, 0, 0.3);">
 								<h5>Inteligencia Artificial.</h5>
 								<p>	Mira como se veria Woody segun la Inteligencia Artificial</p>
 							</div>
 						</div>
 						<div class="carousel-item">
-							<a href="https://www.fi.unju.edu.ar/noticias-generales/4576-52%C2%B0-aniversario-de-la-facultad-de-ingenieria-de-la-unju.html"target="_blank"><img src="../static/images/fi.jpg" class="d-block w-100" alt="..."></a>
+							<a href="https://www.fi.unju.edu.ar/noticias-generales/4576-52%C2%B0-aniversario-de-la-facultad-de-ingenieria-de-la-unju.html"target="_blank"><img th:src="@{../../static/images/fi.png}" class="d-block w-100" alt="..."></a>
 							<div class="carousel-caption d-none d-md-block"	style="background-color: rgba(0, 0, 0, 0.3);">
 								<h5>La FI de Cumpleaños!</h5>
 								<p>La Facultad de Ingenieria Cumple su 52° Aniversario 1972/2024.</p>
 							</div>
 						</div>
 						<div class="carousel-item">
-							<img src="../static/images/videojuegosjpg.jpg" class="d-block w-100" alt="...">
+							<img th:src="@{../../static/images/videojuegosjpg.png}" class="d-block w-100" alt="...">
 							<div class="carousel-caption d-none d-md-block"	style="background-color: rgba(0, 0, 0, 0.3);">
 								<h5>Juegos Virtuales.</h5>
 								<p>La Ciencia asegura un paso mas en el uso de la IA en los juegos.</p>
@@ -148,7 +146,7 @@
 					<div class="collapse collapse-horizontal" id="collapseWidthExample">
 						<div class="card card-body" style="width: 420px;">
 							"Construyendo un Futuro Mejor a través de la Innovación Tecnológica"
-							<img th:src="../static/images/logofiunju2.png" alt="logo">
+							<img th:src="@{../../static/images/logofiunju2.png}" alt="logo">
 						</div>
 					</div>
 				</div>
@@ -165,7 +163,7 @@
 				<div class="d-flex justify-content-center align-items-center">
 					<div class="card" style="width: 18rem; 	box-shadow: 0 16px 26px rgba(0, 0, 0, 0.5);">
 
-						<a href="https://www.fi.unju.edu.ar/secretarias/sec-academica/calendario-academico.html"target="_blank"><img th:src="@{/images/libro.png}" class="card-img-top" alt="calendario academico"
+						<a href="https://www.fi.unju.edu.ar/secretarias/sec-academica/calendario-academico.html"target="_blank"><img th:src="@{../../static/images/libro.png}" class="card-img-top" alt="calendario academico"
 							style="padding:18px ;"></a>
 						<div class="card-body">
 							<p class="card-text">Conoce el Calendario Academico que Tenemos este Año Lectivo 2024.</p>
@@ -175,7 +173,7 @@
 				<br>
 				<div class="d-flex justify-content-center align-items-center">
 					<div class="card" style="width: 18rem; 	box-shadow: 0 16px 26px rgba(0, 0, 0, 0.5);">
-						<a href="https://virtual.unju.edu.ar/bibliotecas/"target="_blank"><img src="../static/images/libro-electronico.png" class="card-img-top" alt="biblioteca"
+						<a href="https://virtual.unju.edu.ar/bibliotecas/"target="_blank"><img th:src="@{../../static/images/libroelectronico.png}" class="card-img-top" alt="biblioteca"
 							style="padding: 5px;"></a>
 						<div class="card-body">
 							<p class="card-text">Acceso a la bilbioteca virtual, solicitud de libros solo con tu Libretra Universitaria.</p>
@@ -186,8 +184,6 @@
 
 		</div>
 	</div>
-	<script type="text/javascript" data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
-</body>
 <footer class="bg-body-tertiary" style=" padding: 20px; text-align: center;">
     <p style="margin-bottom: 10px;">P.Visual © 2024 Facultad de Ingenieria. Todos los derechos reservados.</p>
     <nav>
@@ -198,5 +194,8 @@
         </ul>
     </nav>
 </footer>
+<script type="text/javascript" data-th-src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+</body>
+
 
 </html>
