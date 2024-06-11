@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<link rel="stylesheet" data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}">
-<title>footer</title>
-</head>
+<html xmlns:th="htts://www.thymeleaf.org" lang="es">
+<head data-th-replace="~{/layouts/header :: head}"></head>
 <body>
-	<footer class="bg-body-tertiary" style=" padding: 20px; text-align: center;">
+	<footer th:fragment="footer" class="bg-body-tertiary" style=" padding: 20px; text-align: center;">
     <p style="margin-bottom: 10px;">P.Visual © 2024 Facultad de Ingenieria. Todos los derechos reservados.</p>
     <nav>
         <ul style="list-style: none; padding: 0;">
-            <li style="display: inline; margin: 0 10px;"><a href="#" style=" text-decoration: none;">Instagram</a></li>
-            <li style="display: inline; margin: 0 10px;"><a href="#" style=" text-decoration: none;">Facebook</a></li>
-            <li style="display: inline; margin: 0 10px;"><a href="#" style=" text-decoration: none;">Contacto</a></li>
+            <li style="display: inline; margin: 0 10px;"><a data-th-href="@{#}" style=" text-decoration: none;">Instagram</a></li>
+            <li style="display: inline; margin: 0 10px;"><a data-th-href="@{#}" style=" text-decoration: none;">Facebook</a></li>
+            <li style="display: inline; margin: 0 10px;"><a data-th-href="@{#}" style=" text-decoration: none;">Contacto</a></li>
         </ul>
     </nav>
 	</footer>
-<script type="text/javascript" data-th-src="@{/webjars/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
