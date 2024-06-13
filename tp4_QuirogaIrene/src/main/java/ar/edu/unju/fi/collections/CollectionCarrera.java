@@ -18,9 +18,9 @@ public class CollectionCarrera {
 	/*Devuelve un arrayList de objetos de la clase Carrera*/
 	public static List <Carrera> getCarreras(){
 		if(carreras.isEmpty()) {
-			carreras.add(new Carrera ((int)1,"A.P.U",(byte)3, true));
-			carreras.add(new Carrera ((int)2,"Ingenieria Informatica",(byte)5,true));
-			carreras.add(new Carrera ((int)3,"Ingenieria Quimica",(byte)5,true));
+			carreras.add(new Carrera (1,"A.P.U",(byte)3, true));
+			carreras.add(new Carrera (2,"Ingenieria Informatica",(byte)5,true));
+			carreras.add(new Carrera (3,"Ingenieria Quimica",(byte)5,true));
 			
 		}
 		return carreras;

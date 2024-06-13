@@ -1,16 +1,18 @@
 package ar.edu.unju.fi.model;
 
 public class Materia {
-	private String codigo;
+	private int codigo;
     private String nombre;
     private String curso;
     private int cantidadDeHoras;
-    private String modalidad;
+    private boolean modalidad;
     private String docente;
     private String carrera;
 
+    public Materia() {
+	}
     // Constructor
-    public Materia(String codigo, String nombre, String curso, int cantidadDeHoras, String modalidad, String docente, String carrera) {
+    public Materia(int codigo, String nombre, String curso, int cantidadDeHoras, boolean modalidad, String docente, String carrera) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.curso = curso;
@@ -21,11 +23,11 @@ public class Materia {
     }
 
     // Getters y Setters
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
@@ -53,11 +55,11 @@ public class Materia {
         this.cantidadDeHoras = cantidadDeHoras;
     }
 
-    public String getModalidad() {
+    public boolean getModalidad() {
         return modalidad;
     }
 
-    public void setModalidad(String modalidad) {
+    public void setModalidad(boolean modalidad) {
         this.modalidad = modalidad;
     }
 

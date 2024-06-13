@@ -18,21 +18,27 @@
 						    <tr>
 						      <th scope="col">Codigo</th>
 						      <th scope="col">Nombre</th>
-						      <th scope="col">Duracion</th>
-						      <th scope="col">Estado</th>
+						      <th scope="col">Curso</th>
+						      <th scope="col">Carga Horaria</th>
+						      <th scope="col">Modalidad</th>
+						      <th scope="col">Carrera</th>
+						      <th scope="col">Docente</th>
 						      <th scope="col">Opciones</th>
 						    </tr>
-						    <tr data-th-each="carre : ${carreras}">
-						      <td data-th-text="${carre.codigo}"></td>
-						      <td data-th-text="${carre.nombre}"></td>
-						      <td data-th-text="${carre.cantidadAnios}+' años'"></td>
+						    <tr data-th-each="mate : ${materias}">
+						      <td data-th-text="${mate.codigo}"></td>
+						      <td data-th-text="${mate.nombre}"></td>
+						      <td data-th-text="${mate.curso}"></td>
+						      <td data-th-text="${mate.cantidadDeHoras}"></td>
 						      <td>
-						      	<span th:if="${carre.estado}">Activa</span>
-						      	<span th:if="${!carre.estado}">Inactiva</span>
+						      	<span th:if="${mate.modalidad}">Presencial</span>
+						      	<span th:if="${!mate.modalidad}">Virtual</span>
 						      </td>
+						      <td data-th-text="${mate.docente}"></td>
+						      <td data-th-text="${mate.carrera}"></td>
 						      <td>
-						      	<a class="btn btn-success" data-th-href="${/carrera/modificar/}+${carre.codigo}" role="button">Editar</a>
-						      	<a class="btn btn-dark" data-th-href="${/carrera/eliminar/}+${carre.codigo}" role="button">Eliminar</a>
+						      	<a class="btn btn-success" data-th-href="${/materia/modificar/}+${mate.codigo}" role="button">Editar</a>
+						      	<a class="btn btn-dark" data-th-href="${/materia/eliminar/}+${mate.codigo}" role="button">Eliminar</a>
 						      </td>
 						     </tr>
 						</table>
