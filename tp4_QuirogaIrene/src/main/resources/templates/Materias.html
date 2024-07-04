@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head data-th-replace="~{/layouts/header :: head}">
-	<meta charset="UTF-8">
-	<title data-th-text="${titulo}"></title>
+    <meta charset="UTF-8">
+    <title data-th-text="${titulo}"></title>
 </head>
-	<body>
-		<header data-th-replace="~{/layouts/header :: header}"></header>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col col-sm-12 fondo-form p-5">
-					<div class="row mb-5">
-					
-						<div class="d-grid gap-2 d-md-flex justify-content-md-end mb-2">
-							<a class="btn btn-primary" data-th-href="@{/carrera/nuevo}" role="button">Nueva Carrera</a>
-						</div>
-						<table class="table table-striped table-hover">
-						    <tr>
-						      <th scope="col">Codigo</th>
-						      <th scope="col">Nombre</th>
-						      <th scope="col">Curso</th>
-						      <th scope="col">Carga Horaria</th>
-						      <th scope="col">Modalidad</th>
-						      <th scope="col">Carrera</th>
-						      <th scope="col">Docente</th>
-						      <th scope="col">Opciones</th>
-						    </tr>
-						    <tr data-th-each="mate : ${materias}">
-						      <td data-th-text="${mate.codigo}"></td>
-						      <td data-th-text="${mate.nombre}"></td>
-						      <td data-th-text="${mate.curso}"></td>
-						      <td data-th-text="${mate.cantidadDeHoras}"></td>
-						      <td>
-						      	<span th:if="${mate.modalidad}">Presencial</span>
-						      	<span th:if="${!mate.modalidad}">Virtual</span>
-						      </td>
-						      <td data-th-text="${mate.docente}"></td>
-						      <td data-th-text="${mate.carrera}"></td>
-						      <td>
-						      	<a class="btn btn-success" data-th-href="${/materia/modificar/}+${mate.codigo}" role="button">Editar</a>
-						      	<a class="btn btn-dark" data-th-href="${/materia/eliminar/}+${mate.codigo}" role="button">Eliminar</a>
-						      </td>
-						     </tr>
-						</table>
-					</div>
-				</div>
-			</div>
-			<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
-		</div>
-		
-		<script type="text/javascript" data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
-	</body>
+<body>
+<header data-th-replace="~{/layouts/header :: header}"></header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col col-sm-12 fondo-form p-5">
+            <div class="row mb-5">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-2">
+                    <a class="btn btn-primary" th:href="@{/carrera/nuevo}" role="button">Nueva Carrera</a>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Curso</th>
+                        <th scope="col">Carga Horaria</th>
+                        <th scope="col">Modalidad</th>
+                        <th scope="col">Carrera</th>
+                        <th scope="col">Docente</th>
+                        <th scope="col">Opciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="mate : ${materias}">
+                        <td th:text="${mate.codigo}"></td>
+                        <td th:text="${mate.nombre}"></td>
+                        <td th:text="${mate.curso}"></td>
+                        <td th:text="${mate.cantidadDeHoras}"></td>
+                        <td>
+                            <span th:if="${mate.modalidad}">Presencial</span>
+                            <span th:if="${!mate.modalidad}">Virtual</span>
+                        </td>
+                        <td th:text="${mate.docente}"></td>
+                        <td th:text="${mate.carrera}"></td>
+                        <td>
+                            <a class="btn btn-success" th:href="@{/materia/modificar/{codigo}(codigo=${mate.codigo})}" role="button">Editar</a>
+                            <a class="btn btn-dark" th:href="@{/materia/eliminar/{codigo}(codigo=${mate.codigo})}" role="button">Eliminar</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+</div>
+
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
 </html>
