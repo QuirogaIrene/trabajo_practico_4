@@ -1,7 +1,8 @@
 package ar.edu.unju.fi.model;
 
-import java.util.Date;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Alumno {
 	
 	private String dni;
@@ -9,20 +10,23 @@ public class Alumno {
     private String apellido;
     private String email;
     private String telefono;
-    private Date fechaNacimiento;
+    private String fechaNacimiento;
     private String domicilio;
-    private String LU;
+    private String lu;
 
+    public Alumno() {
+	}
     // Constructor
-    public Alumno(String dni, String nombre, String apellido, String email, String telefono, Date fechaNacimiento, String domicilio, String LU) {
-        this.dni = dni;
+    public Alumno(String lu, String dni, String nombre, String apellido, String email, String telefono, String fechaNacimiento, String domicilio ) {
+    	this.lu = lu;
+    	this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.telefono = telefono;
         this.fechaNacimiento = fechaNacimiento;
         this.domicilio = domicilio;
-        this.LU = LU;
+        
     }
 
     // Getters y Setters
@@ -66,11 +70,11 @@ public class Alumno {
         this.telefono = telefono;
     }
 
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -82,11 +86,11 @@ public class Alumno {
         this.domicilio = domicilio;
     }
 
-    public String getLU() {
-        return LU;
+    public String getLu() {
+        return lu;
     }
 
-    public void setLU(String LU) {
-        this.LU = LU;
+    public void setLu(String lu) {
+        this.lu = lu;
     }
 }

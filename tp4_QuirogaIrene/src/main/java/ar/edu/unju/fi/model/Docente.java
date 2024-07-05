@@ -1,12 +1,17 @@
 package ar.edu.unju.fi.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Docente {
-	 private String legajo;
+	 	private String legajo;
 	    private String nombre;
 	    private String apellido;
 	    private String email;
 	    private String telefono;
 
+	    public Docente() {
+		}
 	    // Constructor
 	    public Docente(String legajo, String nombre, String apellido, String email, String telefono) {
 	        this.legajo = legajo;
